@@ -15,7 +15,7 @@ public final class MatrixOperations {
 
     }
 
-    /***
+    /**
      * Returns {@code EigenDecomposition} of a {@code double[][] M} matrix
      *
      * @param M {@code double[][] M} matrix
@@ -28,7 +28,7 @@ public final class MatrixOperations {
         return eigenDecomposition;
     }
 
-    /***
+    /**
      * Returns a transposed matrix {@code double[][]} given a {@code double[][] M} matrix
      *
      * @param M {@code double[][] M} matrix to transpose
@@ -48,7 +48,7 @@ public final class MatrixOperations {
         return Mt;
     }
 
-    /***
+    /**
      * Multiplies to matrices {@code double[][] A} X {@code double[][] B} and returns the
      * result as {@code double[][]}
      *
@@ -81,7 +81,7 @@ public final class MatrixOperations {
         return result;
     }
 
-    /***
+    /**
      * Finds the {@code double} determinant of a given matrix {@code double[][] M}
      *
      * @param M {@code double[][] M} matrix to find determinant of
@@ -121,7 +121,7 @@ public final class MatrixOperations {
     }
 
 
-    /***
+    /**
      * Returns the {@code double} dot product of vectors {@code double[] ax}
      * and {@code double[] bx} {}
      *
@@ -145,7 +145,7 @@ public final class MatrixOperations {
         return dotProduct;
     }
 
-    /***
+    /**
      * Validates that dot product is possible by comparing the length of {@code double ax}
      * and {@code double bx} vectors
      *
@@ -160,7 +160,7 @@ public final class MatrixOperations {
         }
     }
 
-    /***
+    /**
      * Validates if multiplication is possible between to matrices {@code double[][] A} and {@code double[][] B}
      * by comparing {@code A[0].length} and {@code B.length}
      *

@@ -11,7 +11,7 @@ public final class MatrixUtils {
 
     }
 
-    /***
+    /**
      * Pretty prints a matrix {@code double[][] M} with {@code String matrixName}
      *
      * @param M {@code double[][] M} matrix
@@ -34,7 +34,7 @@ public final class MatrixUtils {
         System.out.println("\n");
     }
 
-    /***
+    /**
      * Pretty prints a given {@code double[] vector} with {@code String vectorName}
      *
      * @param vector {@code double[] vector} vector

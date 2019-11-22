@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
-/***
+/**
  * Meant to be informative
  * NOT thread safe
  *
@@ -18,7 +18,7 @@ public class HITS {
     private ArrayList<String> hubRank = new ArrayList<String>();
     private ArrayList<String> authorityRank = new ArrayList<String>();
 
-    /***
+    /**
      * Calculates PageRank against a given {@code double[][] webMatrix} using algorithm.HITS algorithm
      * where {@code Map<Integer. String> pageNames} uses the value of {@code int i} in {@code webMatrix[i]} to return the
      * {@code String pageName} of the given matrix row

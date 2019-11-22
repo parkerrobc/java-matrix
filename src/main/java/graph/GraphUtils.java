@@ -13,7 +13,7 @@ public final class GraphUtils {
 
     }
 
-    /***
+    /**
      * Creates {@code ArrayList<Point>} used for graph based algorithms.
      * Converts a {@code n} by {@code 2} {@code double[][]}
      *
@@ -32,7 +32,7 @@ public final class GraphUtils {
         return graph;
     }
 
-    /***
+    /**
      * Pretty prints a graph
      *
      * @param graph {@code ArrayList<Point> graph} the graph to print
@@ -49,7 +49,7 @@ public final class GraphUtils {
 
     }
 
-    /***
+    /**
      * Pretty prints a list of edges
      *
      * @param edges {@code ArrayList<Edge> edges} the edges to print

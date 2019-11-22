@@ -4,7 +4,7 @@ import algorithm.HITS;
 import java.util.HashMap;
 import java.util.Map;
 
-/***
+/**
  * Simple Main class. These should really by in Unit tests
  *
  * @author parkerrobc

@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class ConvexHull {
 
-    /***
+    /**
      * Prints the convex hull of given {@code double[][] points} using
      * brute force {@code O(n^3)} complexity
      *
