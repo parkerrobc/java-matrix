@@ -1,2 +1,3 @@
-# java-matrix
-basic matrix operations implemented in java
+# school-java
+
+Java applications written for a few college courses
