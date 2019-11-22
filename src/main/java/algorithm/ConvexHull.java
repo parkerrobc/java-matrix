@@ -26,9 +26,9 @@ public class ConvexHull {
 
         ArrayList<Edge> convexHull = new ArrayList<Edge>();
 
-        int numberOfPointsInGraph = graph.size();
+        int numberOfPointsOnGraph = graph.size();
 
-        System.out.println("Starting Convex Hull:\nTotal Points: " + numberOfPointsInGraph +"\n");
+        System.out.println("Starting Convex Hull:\nTotal Points: " + numberOfPointsOnGraph +"\n");
 
         int complexity = 0;
 
