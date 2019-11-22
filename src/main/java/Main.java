@@ -1,11 +1,25 @@
+import algorithm.ConvexHull;
+import algorithm.HITS;
+
 import java.util.HashMap;
 import java.util.Map;
 
+/***
+ * Simple Main class. These should really by in Unit tests
+ *
+ * @author parkerrobc
+ */
 public class Main {
 
     public static void main(String[] args) throws Exception {
+       HITS();
 
-        System.out.println("\n\nHITS Algorithm\n");
+       ConvexHullBruteForce();
+
+    }
+
+    public static void HITS() throws Exception {
+        System.out.println("\n\n****** HITS Algorithm ******\n");
 
         double[][] L = {
                 {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -39,10 +53,44 @@ public class Main {
         pageNames.put(10, "tk20");
         pageNames.put(11, "Web4");
 
-        hits.calculateRank(L, pageNames);
+        hits.calculatePageRank(L, pageNames);
 
-        System.out.println("\nAuthority Rank:\t" + hits.authorityRank());
-        System.out.println("\nHub Rank:\t\t" + hits.hubRank());
+        System.out.println("\nAuthority Rank:\n\n\t" + hits.authorityRank());
+        System.out.println("\nHub Rank:\n\n\t" + hits.hubRank());
+    }
+
+    public static void ConvexHullBruteForce() {
+
+        System.out.println("\n\n****** ConvexHull Brute Force Algorithm ******\n");
+
+        double[][] pointsTestOne = {
+                {0, 0},
+                {0, 1},
+                {0, 2},
+                {1, 0},
+                {1, 1},
+                {1, 2},
+                {2, 0},
+                {2, 1},
+                {2, 2},
+
+        };
+
+        ConvexHull convexHull = new ConvexHull();
+
+        convexHull.bruteForceConvexHull(pointsTestOne);
+
+        double[][] pointsTestTwo = {
+                {0, 0},
+                {1, 1},
+                {2, 2},
+                {0, 2},
+                {2, 0},
+        };
+
+        convexHull.bruteForceConvexHull(pointsTestTwo);
 
     }
+
+
 }

@@ -1,21 +1,44 @@
+package algorithm;
+
+import matrix.MatrixOperations;
+import matrix.MatrixUtils;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
+/***
+ * Meant to be informative
+ * NOT thread safe
+ *
+ * @author parkerrobc
+ */
 public class HITS {
-
-    private double[][] L;
-    private double[][] Ltranspose;
 
     private ArrayList<String> hubRank = new ArrayList<String>();
     private ArrayList<String> authorityRank = new ArrayList<String>();
 
-    public void calculateRank(final double[][] webMatrix, final Map<Integer, String> pageNames) throws Exception {
+    /***
+     * Calculates PageRank against a given {@code double[][] webMatrix} using algorithm.HITS algorithm
+     * where {@code Map<Integer. String> pageNames} uses the value of {@code int i} in {@code webMatrix[i]} to return the
+     * {@code String pageName} of the given matrix row
+     *
+     * @param webMatrix {@code double[][] webMatrix} nxn matrix which uses {@code int 1} in column {@code webMatrix[i][j]}
+     *                  to represent that site {@code int i} connects to {@code int j}. {@code int 0} is used to indicate
+     *                  a site connected to itself, or does not contain a connection
+     * @param pageNames {@code Map<Integer,String> pageNames} contains the {@code String pageName} of web site {@code int i}
+     *                  in {@code pageNames.get(i)}
+     *
+     * @throws Exception {@code Exception} multiplication not possible
+     */
+    public void calculatePageRank(final double[][] webMatrix, final Map<Integer, String> pageNames) throws Exception {
 
-        L = webMatrix;
+        double[][] L = webMatrix;
+
         MatrixUtils.printMatrix(L, "L");
 
-        Ltranspose = MatrixOperations.transposeMatrix(L);
+        double[][] Ltranspose = MatrixOperations.transposeMatrix(L);
+
         MatrixUtils.printMatrix(Ltranspose, "Ltranspose");
 
         double[][] LtransposexL = MatrixOperations.multiplyMatrices(L, Ltranspose);

@@ -1,20 +1,40 @@
+package matrix;
+
 import org.apache.commons.math3.linear.EigenDecomposition;
 import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealMatrix;
 
-
+/**
+ * Basic matrix and vector operations in Java
+ *
+ * @author parkerrobc
+ */
 public final class MatrixOperations {
 
     private MatrixOperations () {
 
     }
 
+    /***
+     * Returns {@code EigenDecomposition} of a {@code double[][] M} matrix
+     *
+     * @param M {@code double[][] M} matrix
+     *
+     * @return {@code EigenDecomposition}
+     */
     public static EigenDecomposition getEigenDecomposition(final double[][] M) {
         RealMatrix realMatrix = MatrixUtils.createRealMatrix(M);
         EigenDecomposition eigenDecomposition = new EigenDecomposition(realMatrix);
         return eigenDecomposition;
     }
 
+    /***
+     * Returns a transposed matrix {@code double[][]} given a {@code double[][] M} matrix
+     *
+     * @param M {@code double[][] M} matrix to transpose
+     *
+     * @return {@code double[][]} matrix transpose
+     */
     public static double[][] transposeMatrix(final double[][] M) {
 
         double[][] Mt = new double[M[0].length][M.length];
@@ -28,6 +48,17 @@ public final class MatrixOperations {
         return Mt;
     }
 
+    /***
+     * Multiplies to matrices {@code double[][] A} X {@code double[][] B} and returns the
+     * result as {@code double[][]}
+     *
+     * @param A {@code double[][] A} matrix to multiply
+     * @param B {@code double[][] B} matrix to multiply
+     *
+     * @return
+     *
+     * @throws Exception {@code Exception} multiplication not possible
+     */
     public static double[][] multiplyMatrices(final double[][] A, final double[][] B) throws Exception {
 
         validateMultiplicationPossible(A, B);
@@ -50,7 +81,14 @@ public final class MatrixOperations {
         return result;
     }
 
-    public static double findDeterminant(double[][] M) {
+    /***
+     * Finds the {@code double} determinant of a given matrix {@code double[][] M}
+     *
+     * @param M {@code double[][] M} matrix to find determinant of
+     *
+     * @return {@code double} determinant of matrix {@code double[][] M}
+     */
+    public static double findDeterminant(final double[][] M) {
         int determinate = 0;
 
         double[] firstRow = M[0];
@@ -83,6 +121,17 @@ public final class MatrixOperations {
     }
 
 
+    /***
+     * Returns the {@code double} dot product of vectors {@code double[] ax}
+     * and {@code double[] bx} {}
+     *
+     * @param ax {@code double[] ax} vector
+     * @param bx {@code double[] bx} vector
+     *
+     * @return {@code double} dot product of {@code double[] ax} and {@code double[] bx}
+     *
+     * @throws Exception {@code Exception} dot product not possible
+     */
     public static double dotProduct(final double[] ax, final double[] bx) throws Exception {
 
         validateDotProductPossible(ax, bx);
@@ -96,12 +145,30 @@ public final class MatrixOperations {
         return dotProduct;
     }
 
+    /***
+     * Validates that dot product is possible by comparing the length of {@code double ax}
+     * and {@code double bx} vectors
+     *
+     * @param ax {@code double[] ax} vector
+     * @param bx {@code double[] bx} vector
+     *
+     * @throws Exception {@code Exception} dot product not possible
+     */
     private static void validateDotProductPossible(final double[] ax, final double[] bx) throws Exception {
         if (ax.length != bx.length) {
             throw new Exception("Dot Product Not Possible");
         }
     }
 
+    /***
+     * Validates if multiplication is possible between to matrices {@code double[][] A} and {@code double[][] B}
+     * by comparing {@code A[0].length} and {@code B.length}
+     *
+     * @param A {@code double[][] A} matrix
+     * @param B {@code double[][] B} matrix
+     *
+     * @throws Exception {@code Exception} multiplication not possible
+     */
     private static void validateMultiplicationPossible(final double[][] A, final double[][] B) throws Exception {
         if (A[0].length != B.length) {
             throw new Exception("Multiplication Not Possible");
